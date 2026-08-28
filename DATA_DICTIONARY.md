@@ -83,3 +83,35 @@ This project's processed file (`youth_unemployment_2016_2026.csv`) uses the **co
 ### Known limitations
 - **6 districts (1 in Sabah, 5 in Sarawak) have no 2024 figure at all** in the source file — a genuine publication gap, not a processing error. These are excluded from Notebook 06's charts (see the notebook for the exact list).
 - **DOSM's own Labour Force Survey methodology states it is designed for national and state-level reliability first.** District-level figures, especially for smaller or more remote districts, should be read as directional rather than precise to a decimal point.
+
+## wage_premium_by_education.csv
+
+**Source:** DOSM, *Salaries & Wages Survey Report 2024*, cited via secondary web reporting — the primary report was not fetched or read directly this session.
+**Classification:** DERIVED/ESTIMATED
+**Coverage:** 2024 only, national.
+**Description:** Median monthly salary (RM) by highest education level — Degree, Diploma, STPM/Certificate.
+
+### Known limitations
+- **This is an all-ages, all-tenure snapshot**, not a fresh-graduate-specific starting salary — it likely overstates what a *new* graduate earns relative to a new SPM-holder entering the workforce in the same year. See Notebook 07's Confidence & Caveats.
+- **No PUBLIC, machine-readable wage-by-education dataset was found on OpenDOSM** — checked directly against the full data catalogue this session; no dataset with "wage" or "salary" in its name or description exists there disaggregated by education or skill level.
+
+## wage_growth_2012_2022.csv
+
+**Source:** PNB Research Institute analysis of 26 editions of the Malaysian Employers Federation (MEF) Salary Survey, 1997–2022, cited via secondary web reporting.
+**Classification:** ESTIMATED — a third-party research institute's published finding, not independently re-derived from the underlying 26 survey editions this session.
+**Coverage:** 2012–2022, national, by qualification (Degree, SPM, PMR).
+**Description:** Real (inflation-adjusted) wage growth by qualification level over the decade following Malaysia's 2012 minimum wage policy introduction.
+
+### Known limitations
+- **This is a single third-party research finding, not a government-published statistic** — it is well-sourced (a named research institute, a long-running industry salary survey) but sits a rigor tier below the PUBLIC DOSM datasets used in Notebooks 01–06.
+
+## unemployed_graduates_by_field.csv
+
+**Source:** Ministry of Higher Education (MOHE) Graduate Tracer Study, cited via secondary web reporting — the primary study was not accessed directly this session. MOHE's own Graduate Tracer Study portal (GREaT) offers an interactive institution-level search tool, not a bulk downloadable dataset; this session did not query it interactively.
+**Classification:** ESTIMATED
+**Coverage:** A single reported snapshot year (not specified in the secondary source), 3 of MOHE's broader field-of-study categories only.
+**Description:** Number and rate of unemployed graduates by field of study, for the three fields a secondary source reported exact figures for.
+
+### Known limitations
+- **Only 3 of MOHE's full set of field-of-study categories have verified figures** — this is illustrative of a reported pattern, not an exhaustive breakdown of every field Malaysian universities offer.
+- **This is the least-verified dataset in this case study.** No primary MOHE document or dataset was directly read this session; figures are as reported by a single secondary source. Treat directionally, not as precise counts.

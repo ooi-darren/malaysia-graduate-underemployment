@@ -10,7 +10,7 @@ Malaysian commentary regularly describes a "graduate unemployment crisis." Does 
 
 ## Status
 
-✅ **Analysis complete.** Six notebooks, run as a funnel from national headline down to district-level granularity — deeper than any previous case study in this portfolio.
+✅ **Analysis complete.** Eight notebooks, run as a funnel from national headline down to district-level granularity, plus two cross-cutting layers on pay and field of study — deeper than any previous case study in this portfolio.
 
 ## Key Findings
 
@@ -30,6 +30,12 @@ Malaysian commentary regularly describes a "graduate unemployment crisis." Does 
 **6. District: the state average badly understates the real hotspot.** 13 of the 15 highest-unemployment districts nationally are in Sabah's rural interior (8.7%–11.1%) — roughly double Sabah's own state average and 3–4x the national rate. Kuala Lumpur and Selangor don't appear near the top of the district ranking at all. *([Notebook 06](./notebooks/06-every-district.ipynb))*
 **Why:** Independent reporting ties this to geographic isolation from Sabah's coastal economic core — interior roads remain unpaved despite years of development funding. *(Full explanation in Notebook 06's "Why Is This Happening?" section.)*
 
+**7. Pay: the degree premium is real but has been shrinking for 25 years.** Degree holders still out-earn everyone (RM5,724 median vs. RM3,355 for STPM/certificate holders in 2024) — but that's down from a 2.7x premium in 1997 to 1.7x in 2022, and in 2012–2022 specifically, degree holders' real wages grew just 5% while SPM holders grew 37% and PMR holders grew 64%. *([Notebook 07](./notebooks/07-wage-penalty.ipynb))*
+**Why:** Minimum-wage policy since 2012 lifted lower qualifications' wage floor faster than market forces raised graduate salaries — a mechanical compression from below, not graduates getting worse. *(Full explanation in Notebook 07's "Why Is This Happening?" section.)*
+
+**8. Field of study: the mismatch is concentrated, not universal.** Social sciences, business, and law graduates face the highest unemployment share of any field (15.6%) — well above engineering (11.4%), despite engineering being the more common target of "graduate oversupply" commentary. *([Notebook 08](./notebooks/08-field-of-study-mismatch.ipynb))*
+**Why:** Universities expanded enrolment fastest in lower-cost-to-deliver fields (business, social sciences) rather than the faculty-and-lab-intensive technical fields employers actually report shortages in. *(Full explanation in Notebook 08's "Why Is This Happening?" section.)*
+
 ## Explain It Simply
 
 People argue online that "a degree doesn't get you a job anymore" in Malaysia. This project checks that claim as literally as possible, using the government's own numbers, at three levels of zoom: the whole country, every state, and every district.
@@ -39,12 +45,13 @@ People argue online that "a degree doesn't get you a job anymore" in Malaysia. T
 - **And dig into job quality, not just "has a job or not":** Even when a young graduate *does* have a job, is it a job that actually needed a degree? *Often not — about 3 in 4 employed young people with a degree are in a job below their qualification level.*
 - **Then zoom into geography, state by state:** Where in the country is the labour market weakest? *Mostly the less-industrialised states, as you'd expect — except Malaysia's own capital city, which is worse off than its wealth would suggest.*
 - **And finally, district by district — the closest to "city" the data allows:** *One region stands out sharply: rural interior Sabah, where unemployment runs 2–4x the national rate, hidden inside a state average that looks only moderately elevated.*
+- **Two more angles, cutting across all of the above:** *Does a degree even pay off financially anymore?* Yes, but less than it used to — the pay advantage has been shrinking for 25 years. *And is the mismatch the same for every degree?* No — it's heavily concentrated in a few fields (business, social sciences, law), not spread evenly across every graduate.
 
-Put together: there isn't one "graduate crisis." There's a youth-transition problem, a job-quality problem concentrated in certain fields, and a geographic-isolation problem in one specific part of the country — three different issues that get flattened into one headline. (New to terms like "underemployment" or "frictional unemployment"? See the [Glossary](#glossary) near the bottom.)
+Put together: there isn't one "graduate crisis." There's a youth-transition problem, a job-quality problem concentrated in certain fields, a geographic-isolation problem in one specific part of the country, and a shrinking financial payoff even for those who do land the right job — several different issues that get flattened into one headline. (New to terms like "underemployment" or "frictional unemployment"? See the [Glossary](#glossary) near the bottom.)
 
 ## Why This Project
 
-Most commentary about "graduate unemployment" in Malaysia cites the phrase as settled fact and stops there. This project tests it directly against DOSM's own published data, at three levels of geographic granularity most commentary never checks — national, every state, and every district — and reports exactly where the popular narrative holds, where it needs a sharper reframe, and where the data can go no further (there is no published city-level series in Malaysia; district is the floor).
+Most commentary about "graduate unemployment" in Malaysia cites the phrase as settled fact and stops there. This project tests it directly against DOSM's own published data, at three levels of geographic granularity most commentary never checks — national, every state, and every district — plus two cross-cutting checks (pay, field of study) that most single-number headlines skip entirely. It reports exactly where the popular narrative holds, where it needs a sharper reframe, where the data can go no further (there is no published city-level series in Malaysia; district is the floor), and where no PUBLIC government dataset exists at all, stating that gap plainly rather than papering over it with an unlabeled number.
 
 ## Data Sources
 
@@ -60,8 +67,11 @@ Every dataset is labeled **PUBLIC** (fetched and read directly from an official 
 | State GDP by sector | DOSM, State GDP | DERIVED | 2024 |
 | Public university lecturers by state | DOSM | DERIVED | 2023 |
 | District unemployment | DOSM, Labour Force Survey by District | PUBLIC | 2024 |
+| Wage premium by education | DOSM, Salaries & Wages Survey 2024 | DERIVED/ESTIMATED | 2024 |
+| Real wage growth by qualification | PNB Research Institute (MEF Salary Survey) | ESTIMATED | 2012–2022 |
+| Unemployed graduates by field of study | MOHE Graduate Tracer Study | ESTIMATED | Single reported snapshot |
 
-**Data quality is uneven by design of the topic, stated plainly rather than smoothed over:** the national and state series are clean structured time series from DOSM's Labour Force Survey; the graduate-specific figures had to be sourced from a PDF this session's tools couldn't machine-read; and a genuine header/data mismatch was found and corrected in the youth-unemployment file — see `DATA_DICTIONARY.md` for the full verification.
+**Data quality is uneven by design of the topic, stated plainly rather than smoothed over:** the national and state series are clean structured time series from DOSM's Labour Force Survey; the graduate-specific figures had to be sourced from a PDF this session's tools couldn't machine-read; a genuine header/data mismatch was found and corrected in the youth-unemployment file; and no PUBLIC dataset exists at all for wages-by-education or field-of-study outcomes, so Notebooks 07 and 08 run on ESTIMATED, secondary-cited figures rather than PUBLIC data — see `DATA_DICTIONARY.md` for the full detail on each.
 
 ## Notebooks
 
@@ -73,10 +83,12 @@ Every dataset is labeled **PUBLIC** (fetched and read directly from an official 
 | [04 — Every State](./notebooks/04-every-state.ipynb) | Where in Malaysia is the labour market actually weakest? | PUBLIC |
 | [05 — Why States Differ](./notebooks/05-why-states-differ.ipynb) | Does industrial structure or local graduate supply explain it? | PUBLIC + DERIVED |
 | [06 — Every District](./notebooks/06-every-district.ipynb) | Do hotspots cluster where you'd expect, or surprise? | PUBLIC |
+| [07 — Wage Penalty](./notebooks/07-wage-penalty.ipynb) | Does underemployment actually cost graduates money? | DERIVED/ESTIMATED |
+| [08 — Field-of-Study Mismatch](./notebooks/08-field-of-study-mismatch.ipynb) | Which degrees carry the oversupply, and which don't? | ESTIMATED |
 
 ## Methodology
 
-Business problem → objectives → data acquisition → cleaning → analysis → visualization → insight → recommendation, run once per layer of the funnel — national, age, job quality, state, structural explanation, then district. Each notebook opens with the question and the answer, then shows the reasoning between them, including a genuine data-quality bug found and corrected mid-analysis (see `DATA_DICTIONARY.md`) and two notebooks where the first-draft finding didn't survive contact with the actual chart and had to be rewritten to match the data, not the other way around.
+Business problem → objectives → data acquisition → cleaning → analysis → visualization → insight → recommendation, run once per layer of the funnel — national, age, job quality, state, structural explanation, district, then two cross-cutting layers on pay and field of study. Each notebook opens with the question and the answer, then shows the reasoning between them, including a genuine data-quality bug found and corrected mid-analysis (see `DATA_DICTIONARY.md`) and two notebooks where the first-draft finding didn't survive contact with the actual chart and had to be rewritten to match the data, not the other way around.
 
 ## Reproducing This Analysis
 
@@ -106,6 +118,8 @@ Plain-language definitions for the technical terms used in this project.
 - **Frictional unemployment:** The normal, unavoidable delay between finishing school (or leaving a job) and finding the next one — job search itself takes time, even in a healthy economy.
 - **GLFPR (Graduate Labour Force Participation Rate):** The share of graduates who are either working or actively looking for work, as opposed to being out of the labour force entirely (e.g. further study, caregiving).
 - **District:** Malaysia's finest published geographic unit for labour statistics — smaller than a state, but larger than (and not the same as) a city. There is no separate city-level labour data published in Malaysia.
+- **Wage premium:** How much more, on average, someone with a higher qualification earns compared to someone with a lower one — e.g. "degree holders earn 1.7x what STPM/certificate holders earn."
+- **Skills mismatch:** A general term for a worker's qualifications not matching the job they hold — usually meaning overqualified (a graduate in a job that doesn't need a degree), the focus of this project.
 - **PUBLIC / DERIVED / ESTIMATED:** How traceable a number in this project is. **PUBLIC** = taken directly from an official source. **DERIVED** = built by combining or calculating from official sources by hand. **ESTIMATED** = based on a secondary source that couldn't be independently verified. See [`DATA_DICTIONARY.md`](./DATA_DICTIONARY.md) for exactly how every number here was classified.
 
 ## Author
