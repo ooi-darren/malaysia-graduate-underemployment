@@ -2,7 +2,7 @@
 
 <img src="./assets/hero.png" width="720" alt="Youth skills-related underemployment has run ~2x the overall rate for 8 years straight">
 
-**Part of a [6-case-study portfolio](https://github.com/ooi-darren)**. See the other five.
+**Part of a [7-case-study portfolio](https://github.com/ooi-darren)**. See the other six.
 
 ## The Question
 
